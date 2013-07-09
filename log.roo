@@ -1,0 +1,22 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-07-09 11:22:36
+project --topLevelPackage com.evolverinc.demo --projectName EvolverInc --java 7 --packaging WAR
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-07-09 11:22:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-07-09 11:23:06
+jpa setup --database MYSQL --provider HIBERNATE --databaseName evolverdb --hostName 127.0.0.1 --userName root --password evolverinc
+entity jpa --class ~.domain.Customer --testAutomatically
+field string --fieldName fname --notNull
+field string --fieldName lname --notNull
+field string --fieldName email --notNull --regexp ^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$
+field string address1 --notNull
+field string address2 
+field string city --notNull 
+field string st --notNull
+entity jpa --class ~.domain.Document --testAutomatically
+field string --fieldName filename --notNull
+field string --fieldName description --sizeMax 500
+field number --type long --fieldName filesize --notNull true
+field string --fieldName contentType --notNull true
+// script --file C:\Users\abarbee.MYEVOLVER\Documents\workspace-sts-3.2.0.RELEASE\Iteration1_files\step1.roo
+web mvc setup
+web mvc all --package ~.web
+// script --file C:\Users\abarbee.MYEVOLVER\Documents\workspace-sts-3.2.0.RELEASE\Iteration1_files\step3.roo
